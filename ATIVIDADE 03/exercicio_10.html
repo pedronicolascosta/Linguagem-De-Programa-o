@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 10 - Pedro Nicolas Costa</title>
+    <!-- Exercício 10: Criar uma função chamada busca que recebe um array e uma função de callback, e retorna o primeiro elemento do array que atende a uma determinada condição definida pela função de call-back (que retorna verdade se o numero for par), caso contrário retorna undefined. -->
+    <script>
+        const numeros = [10, 20, 30, 40, 50];
+
+        function busca(array, callback) {
+            for (let i = 0; i < array.length; i++) {
+                if (callback(array[i])) {
+                    return array[i];
+                }
+            }
+            return undefined;
+        }
+
+        const primeiroPar = busca(numeros, (numero) => numero % 2 === 0);
+        console.log(primeiroPar);  // 4
+    </script>
+</head>
+<body>
+</body>
+</html>

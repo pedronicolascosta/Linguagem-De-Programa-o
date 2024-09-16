@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 06 - Pedro Nicolas Costa</title>
+    <!-- Exercício 06: Criar uma função chamada multiply que recebe dois números e um callback. A função deve multiplicar os dois números e passar o resultado para o callback. -->
+    <script>
+        function multiply(a, b, c){
+            resultado = a * b;
+            c(resultado);
+        }
+
+        function mostrarResultado(resultado){
+            console.log('O resultado é ' + resultado);
+        }
+
+        multiply(15, 2, mostrarResultado);
+    </script>
+</head>
+<body>
+</body>
+</html>

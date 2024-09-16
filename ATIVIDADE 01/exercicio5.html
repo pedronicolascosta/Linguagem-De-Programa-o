@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Números - Pedro Nicolas Costa</title>
+</head>
+<body>
+    <script>
+        function compararNumeros() {
+            const numero1 = parseFloat(prompt('Digite o primeiro número:'));
+            const numero2 = parseFloat(prompt('Digite o segundo número:'));
+
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert('Por favor, insira valores numéricos válidos.');
+                return;
+            }
+
+            if (numero1 === numero2) {
+                alert('Os números são iguais.');
+            } else if (numero1 > numero2) {
+                alert('O primeiro número é maior.');
+            } else {
+                alert('O segundo número é maior.');
+            }
+        }
+
+        compararNumeros();
+    </script>
+</body>
+</html>

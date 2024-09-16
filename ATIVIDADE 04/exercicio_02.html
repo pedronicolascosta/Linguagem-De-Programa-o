@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 02 - Pedro Nicolas Costa</title>
+    <!-- Exercício 02: Crie uma tabela HTML com os dados de uma lista de Contatos (use um array de Contatos contendo Nome, Email e Telefone). Use o JavaScript para adicionar, alterar e excluir contatos da tabela. !-->
+    <style>
+        body{
+            background-color: bisque;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+        }
+        button{
+            border-radius: 20px;
+            padding: 10px;
+            border-style: none;
+            cursor: pointer;
+            background-color: black;
+            color: bisque;
+            margin: 2px;
+        }
+        table{
+            border: 2px;
+            margin-bottom: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+        }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>EXERCÍCIO #02</h1>
+    <table id="tabela">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+        </tr>
+    </table>    
+    <button id="adicionar">Adicionar contato +</button>
+    
+    <script>
+        const tabela = document.getElementById("tabela");
+        const botaoAdicionar = document.getElementById("adicionar");
+
+        let contatos = [
+            { nome: "João", email: "joao@email.com", telefone: "123-456-789"},
+            { nome: "Maria", email: "maria@email.com", telefone: "987-645-321"},
+        ]
+
+        document.addEventListener("DOMContentLoaded", function() {
+            atualizarTabela(contatos, tabela);
+        });
+
+        function atualizarTabela(contatos, tabela){
+            contatos.forEach((contato) =>{
+            const linha = tabela.insertRow();
+
+            const celula1 = linha.insertCell(0);
+            const celula2 = linha.insertCell(1);
+            const celula3 = linha.insertCell(2);
+            const celula4 = linha.insertCell(3);
+
+            celula1.innerHTML = `${contato.nome}`;
+            celula2.innerHTML = `${contato.email}`;
+            celula3.innerHTML = `${contato.telefone}`;
+            celula4.innerHTML = `<button id="editar">Editar</button><button id="excluir">Excluir</button>`;
+            })
+        }
+
+        function limparTabela(tabela){
+            let numRows = tabela.rows.length;
+
+            for (let i = numRows - 1; i > 0; i--) {
+                tabela.deleteRow(i);
+            }
+        }
+    
+        botaoAdicionar.addEventListener("click", () => {
+            const novoNome = prompt("Digite o nome:");
+            const novoEmail = prompt("Digite o email:");
+            const novoTelefone = prompt("Digite o telefone:");
+            
+            const novoContato = [
+                {nome: novoNome, email: novoEmail, telefone: novoTelefone},
+            ]
+
+            contatos = [...contatos, ...novoContato];
+
+            limparTabela(tabela);
+            atualizarTabela(contatos, tabela);
+        })
+    </script>
+</body>
+</html>

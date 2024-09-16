@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Doação de Sangue - Pedro Nicolas Costa</title>
+</head>
+<body>
+    <script>
+        function verificarDoacaoDeSangue() {
+            const idade = parseInt(prompt('Digite sua idade:'));
+
+            if (isNaN(idade)) {
+                alert('Por favor, insira uma idade válida.');
+                return;
+            }
+
+            if (idade >= 18 && idade <= 67) {
+                alert('Você pode doar sangue.');
+            } else {
+                alert('Você não pode doar sangue.');
+            }
+        }
+
+        verificarDoacaoDeSangue();
+    </script>
+</body>
+</html>

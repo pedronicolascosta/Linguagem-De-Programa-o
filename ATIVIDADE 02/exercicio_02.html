@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 02 - Pedro Nicolas Costa</title>
+    <!-- Exercício 02: Defina uma função que receba uma função e retorne uma nova função que executa a função original apenas um número limitado de vezes. -->
+    <script>
+        function receberFunc(func, vezes) {
+
+            let execucoesRestantes = vezes;
+
+            return function repetirFunc() {
+                if (execucoesRestantes > 0) {
+                    func();
+                    execucoesRestantes--;
+                }
+                else{
+                    console.log('o limite de execuções foi atingido!')
+                }
+            };
+        }
+
+        function imprimirValor() {
+            console.log('Hello World!');
+        }
+
+        const repetir = receberFunc(imprimirValor, 2);  
+
+        repetir();  
+        repetir();  
+        repetir();  
+        repetir();  
+    </script>
+</head>
+<body>
+</body>
+</html>

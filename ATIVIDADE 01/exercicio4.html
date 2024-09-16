@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média das Notas - Pedro Nicolas Costa</title>
+</head>
+<body>
+    <script>
+        function calcularMedia() {
+            const nota1 = parseFloat(prompt('Digite a primeira nota:'));
+            const nota2 = parseFloat(prompt('Digite a segunda nota:'));
+            const nota3 = parseFloat(prompt('Digite a terceira nota:'));
+
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert('Por favor, insira valores válidos para todas as notas.');
+                return;
+            }
+
+            const media = (nota1 + nota2 + nota3) / 3;
+            alert('A média das notas é: ' + media.toFixed(2));
+        }
+
+        calcularMedia();
+    </script>
+</body>
+</html>

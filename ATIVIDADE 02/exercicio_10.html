@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 - Pedro Nicolas Costa</title>
+    <!-- Exercício 10: Defina uma função seta que seja passada como argumento para outra função. -->
+    <script>
+        const dobro = (valor) => valor*2;
+
+        function dobrarValor(valor, dobro){
+            return dobro(valor);
+        }
+
+        console.log('o dobro de 20 é igual a ' + dobrarValor(20, dobro));
+    </script>
+</head>
+<body>
+</body>
+</html>

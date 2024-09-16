@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 05 - Pedro Nicolas Costa</title>
+    <!-- Exercício 05: Definir uma função de primeira classe que recebe duas funções como parâmetro e retorna a soma dos resultados dessas funções. -->
+    <script>
+        function resultadoFinal(primeiro, segundo){
+            return primeiro() + segundo(); 
+        }
+
+        function primeiroBimestre(){
+            let nota1 = 6;
+            let nota2 = 8;
+            let nota3 = 9;
+            return (nota1 + nota2 + nota3) / 3;
+        }
+
+        function segundoBimestre(){
+            let nota1 = 8;
+            let nota2 = 10;
+            let nota3 = 10;
+            return (nota1 + nota2 + nota3) / 3;
+        }
+
+        console.log('A soma das médias dos dois bimestres é igual a ' + resultadoFinal(primeiroBimestre, segundoBimestre));
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores Ímpares de 0 a 20 - Pedro Nicolas Costa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valores inteiros ímpares de 0 a 20</h1>
+    <ul id="listaImpares"></ul>
+
+    <script>
+        function apresentarImpares() {
+            const lista = document.getElementById('listaImpares');
+
+            for (let i = 1; i <= 20; i += 2) {
+                const item = document.createElement('li');
+                item.textContent = i;
+                lista.appendChild(item);
+            }
+        }
+
+        apresentarImpares();
+    </script>
+</body>
+</html>

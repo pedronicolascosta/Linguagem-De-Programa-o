@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Três Números - Pedro Nicolas Costa</title>
+</head>
+<body>
+    <script>
+        function compararTresNumeros() {
+            const numero1 = parseInt(prompt('Digite o primeiro número inteiro:'));
+            const numero2 = parseInt(prompt('Digite o segundo número inteiro:'));
+            const numero3 = parseInt(prompt('Digite o terceiro número inteiro:'));
+
+            if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3)) {
+                alert('Por favor, insira apenas números inteiros válidos.');
+                return;
+            }
+
+            let maior, menor;
+
+            if (numero1 > numero2 && numero1 > numero3) {
+                maior = numero1;
+            } else if (numero2 > numero1 && numero2 > numero3) {
+                maior = numero2;
+            } else {
+                maior = numero3;
+            }
+
+            if (numero1 < numero2 && numero1 < numero3) {
+                menor = numero1;
+            } else if (numero2 < numero1 && numero2 < numero3) {
+                menor = numero2;
+            } else {
+                menor = numero3;
+            }
+
+            alert('O maior número é: ' + maior);
+            alert('O menor número é: ' + menor);
+        }
+
+        compararTresNumeros();
+    </script>
+</body>
+</html>

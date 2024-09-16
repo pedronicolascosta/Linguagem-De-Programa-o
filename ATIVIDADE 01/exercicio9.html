@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores de 1 a 200 - Pedro Nicolas Costa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valores numéricos de 1 a 200</h1>
+    <ul id="listaValores"></ul>
+
+    <script>
+        function apresentarValores() {
+            const lista = document.getElementById('listaValores');
+            
+            for (let i = 1; i <= 200; i++) {
+                const item = document.createElement('li');
+                item.textContent = i;
+                lista.appendChild(item);
+            }
+        }
+
+        apresentarValores();
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerício 08 - Pedro Nicolas Costa</title>
+    <!-- Exercício 08: Defina uma função anônima que seja passada como argumento para outra função. -->
+    <script>
+        function calcularQuadrado(valor, func){
+            resultado = func(valor);
+            return resultado;
+        }
+
+        console.log('O quadrado de 5 é igual a ' + calcularQuadrado(5, function(valor){
+            return valor*valor;}
+        ));
+    </script>
+</head>
+<body>
+</body>
+</html>
