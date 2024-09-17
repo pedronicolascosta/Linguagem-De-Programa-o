@@ -11,27 +11,57 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
-        h1{
+        h1, h2{
             color: rgb(0, 0, 0);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
             font-size: 40px;
         }
-        h2{
-            color: rgb(0, 0, 0);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        h2 {
             font-size: 30px;
         }
-        button{
+        .calculadora {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+        }
+        input[type="number"] {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
             border-radius: 20px;
-            padding: 10px;
+            padding: 10px 20px;
             border-style: none;
             cursor: pointer;
             background-color: black;
             color: bisque;
-            margin: 2px;
+            margin-top: 10px;
+            font-size: 16px;
         }
-        
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -39,25 +69,40 @@
     <h2>CALCULADORA</h2>
     
     <div class="calculadora">
-        <form>
+        <form id="calc-form">
             <label>Insira o primeiro valor:</label>
-            <input type="number" id="primeiro-valor">
+            <input type="number" id="primeiro-valor" required>
 
             <label>Insira o segundo valor:</label>
-            <input type="number" id="segundo-valor">
+            <input type="number" id="segundo-valor" required>
 
-            <label>Escolha a operação desejada</label>
-            <input type="radio" id="soma" name="fav_language" value="SOMA">
-            <label for="html">SOMA</label><br>
-            <input type="radio" id="subtracao" name="fav_language" value="SUBTRACAO">
-            <label for="css">SUBTRAÇÃO</label><br>
+            <label>Escolha a operação desejada:</label><br>
+            <input type="radio" id="soma" name="operacao" value="SOMA" required>
+            <label for="soma">SOMA</label><br>
+            <input type="radio" id="subtracao" name="operacao" value="SUBTRACAO">
+            <label for="subtracao">SUBTRAÇÃO</label><br>
+
+            <button type="button" onclick="calcular()">Calcular</button>
         </form>
+
+        <div class="resultado" id="resultado"></div>
     </div>
 
     <script>
-        const relogio = document.getElementById("relogio");
+        function calcular() {
+            const primeiroValor = parseFloat(document.getElementById("primeiro-valor").value);
+            const segundoValor = parseFloat(document.getElementById("segundo-valor").value);
+            const operacao = document.querySelector('input[name="operacao"]:checked').value;
+            let resultado = 0;
 
-        
+            if (operacao === "SOMA") {
+                resultado = primeiroValor + segundoValor;
+            } else if (operacao === "SUBTRACAO") {
+                resultado = primeiroValor - segundoValor;
+            }
+            
+            document.getElementById("resultado").textContent = "Resultado: " + resultado;
+        }
     </script>
 </body>
 </html>
